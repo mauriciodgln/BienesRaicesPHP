@@ -1,6 +1,5 @@
 <?php
-  // include 'includes/templates/header.php'; / Include sirve para templates, para incluir archivos
-  require 'includes/funciones.php'; // Require sirve para funciones o un código más complejo
+  require 'includes/funciones.php';
   incluirTemplate('header', $inicio = true);
 ?>
 
