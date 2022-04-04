@@ -1,0 +1,33 @@
+
+@use 'variables' as v;
+
+.seccion {
+  margin-top: calc(v.$separacion / 2);
+  margin-bottom: calc(v.$separacion / 2);
+}
+
+.margin {
+  margin: 2rem 0;
+}
+
+.contenido-centrado {
+  max-width: 800px;
+}
+
+.alinear-derecha {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ocultar {
+  display: none;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.centrar-contenido {
+  max-width: 55rem;
+  margin: 0 auto;
+}

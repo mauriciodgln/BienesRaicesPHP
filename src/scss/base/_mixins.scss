@@ -1,0 +1,58 @@
+
+@use 'variables' as v;
+
+/** Media Queries **/
+
+@mixin galaxyFold {
+  @media (min-width: v.$galaxyFold) {
+      @content;
+  }
+}
+
+@mixin telefono {
+  @media (min-width: v.$telefono) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: v.$tablet) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: v.$desktop) {
+      @content;
+  }
+}
+
+@mixin maxtablet {
+  @media (max-width: v.$tablet) {
+      @content;
+  }
+}
+
+@mixin grid($columnas, $gap ) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin boton($bgColor, $display, $mTop) {
+  background-color: $bgColor;
+  color: v.$blanco;
+  padding: 1rem 3rem;
+  font-weight: v.$black;
+  text-align: center;
+  display: $display;
+  margin-top: $mTop;
+  transition: 200ms;
+  border: none;
+  cursor: pointer;
+  min-height: 5rem;
+
+  &:hover {
+    background-color: darken($bgColor, 5);
+  }
+}

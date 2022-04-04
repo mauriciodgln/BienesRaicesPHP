@@ -1,0 +1,18 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.pagina-anuncios .contenedor-anuncios {
+  position: initial;
+  padding: 0;
+
+  .anuncio {
+    display: grid;
+
+    .imagen-propiedad {
+      max-height: 25rem;
+      object-fit: cover;
+    }
+  }
+}

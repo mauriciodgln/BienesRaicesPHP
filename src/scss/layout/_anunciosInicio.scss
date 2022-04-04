@@ -1,0 +1,162 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.inferior-anuncio .boton-verde {
+  @include m.tablet {
+    margin-right: 5vw;
+  }
+
+  @include m.desktop {
+    margin-right: 0;
+  }
+}
+
+.contenedor-anuncios {
+  position: relative;
+  margin-top: 2.5rem;
+  @include m.grid(1, 3rem);
+
+  @include m.tablet {
+    @include m.grid(2, 3rem);
+    padding: 0 5vw;
+  }
+
+  @include m.desktop {
+    @include m.grid(3, 3rem);
+    padding: 0;
+  }
+}
+
+.anuncio {
+  background-color: lighten(v.$gris, 5);
+  border: .1rem solid darken(v.$gris, 10);
+  display: none;
+  
+    &.ocultar {
+      display: none;
+    }
+
+    &.display {
+      display: grid;
+    }
+
+    &.mover {
+      grid-column: 1 / 2;
+    }
+
+    &.acomodar {
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+    }
+
+
+  .contenido-anuncio {
+    padding: 2rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  h3,
+  p {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+}
+
+.precio {
+  color: darken(v.$verde, 10);
+  font-weight: v.$bold;
+}
+
+.iconos-anuncio {
+  list-style: none;
+  @include m.grid(3, 1rem);
+
+  li {
+    display: flex;
+    align-items: center;
+    width: 80%;
+
+    img {
+      height: 3rem;
+    }
+  }
+}
+
+.inferior-anuncio {
+  @include m.grid(2, 0);
+
+  @include m.tablet {
+    gap: 3rem;
+  }
+}
+
+.flechas {
+
+  display: flex;
+  margin-top: 2.5rem;
+  justify-content: center;
+
+  .flecha-izq,
+  .flecha-der {
+    width: 2rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: .3s;
+    margin: 0 3rem;
+    border-radius: 50%;
+  
+    &:hover {
+      opacity: 1;
+    }
+  
+    @include m.tablet {
+      display: none;
+    }
+  }
+}
+
+.flecha-der.tablet,
+.flecha-izq.tablet {
+  display: none;
+
+  @include m.tablet {
+    display: block;
+    position: absolute;
+    width: 3rem;
+    height: 100%;
+    opacity: 0.6;
+    cursor: pointer;
+  
+    &:hover {
+      opacity: 1;
+    }
+
+  }
+
+  @include m.desktop {
+    display: none;
+  }
+  
+}
+
+
+.flecha-der.tablet {
+  right: 0;
+}
+
+.descripcion-anuncio {
+  max-height: 15rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}

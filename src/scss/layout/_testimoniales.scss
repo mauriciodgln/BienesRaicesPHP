@@ -1,0 +1,45 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.testimoniales {
+  @include m.tablet {
+    width: 60%;
+    margin: 0 auto;
+  }
+  @include m.desktop {
+    width: 100%;
+  }
+}
+
+.testimonial {
+  background-color: v.$verde;
+  border-radius: 2.5rem;
+  padding: 2rem;
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  color: v.$blanco;
+
+  blockquote {
+    padding-left: 5rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      background-image: url(../img/comilla.svg);
+      background-repeat: no-repeat;
+      height: 5rem;
+      width: 5rem;
+      position: absolute;
+      left: -.5rem;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    color: v.$blanco;
+    text-align: right;
+  }
+}

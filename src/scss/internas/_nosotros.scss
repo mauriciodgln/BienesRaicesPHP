@@ -1,0 +1,31 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.contenido-nosotros {
+  margin-top: 2rem;
+
+  @include m.desktop {
+    @include m.grid(2, 5rem);
+  }
+}
+
+.texto-nosotros {
+  margin-top: 2rem;
+
+  @include m.desktop {
+    margin-top: 0;
+  }
+
+  blockquote,
+  p {
+    text-align: left;
+  }
+
+  blockquote {
+    font-size: 2rem;
+    font-weight: v.$black;
+    margin-bottom: 1rem;
+  }
+}

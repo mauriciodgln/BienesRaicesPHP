@@ -1,0 +1,63 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.alerta {
+  padding: .5rem;
+  text-align: center;
+  color: v.$blanco;
+  font-weight: v.$black;
+  margin: 1rem 0;
+
+  &.error {
+    background-color: v.$rojo;
+  }
+
+  &.correcto {
+    background-color: v.$verde;
+  }
+}
+
+
+table.propiedades {
+  margin-top: 3rem;
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+
+  thead {
+    background-color: v.$verde; 
+
+    th {
+      color: v.$blanco;
+      padding: 1rem;
+    }
+  }
+
+  td {
+    padding: 0 .5rem;
+  }
+
+  .admin-mobile {
+    display: none;
+
+    @include m.desktop {
+      display: revert;
+    }
+  }
+
+  .imagen-tabla {
+    width: 15rem;
+    margin: 0 auto;
+    max-height: 12rem;
+    object-fit: cover;
+  }
+}
+
+.imagen-small {
+  max-width: 100%;
+
+  @include m.telefono {
+    width: 35rem;
+  }
+}
