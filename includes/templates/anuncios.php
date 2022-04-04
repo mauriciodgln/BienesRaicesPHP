@@ -1,5 +1,4 @@
 <?php
-
   // Importar conexión a base de datos
   require 'includes/config/database.php';
   $db = conectarDB();
@@ -7,7 +6,6 @@
   $query = "SELECT * FROM propiedades LIMIT ${limite}";
   // Obtener los resultados
   $resultado = mysqli_query($db, $query);
-
 ?>
 
 
@@ -46,8 +44,6 @@
         </li>
 
       </ul> 
-
-      
 
       <a href="anuncio.php?id=<?php echo $propiedad['id'] . '&width=' . $_GET['width']; ?>" class="boton-celeste-block">Ver propiedad</a>
 
